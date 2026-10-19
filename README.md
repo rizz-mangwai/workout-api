@@ -20,6 +20,8 @@ pipenv run python -m server.seed
 pipenv run python -m server.app
 ```
 
+You can also run the seed script directly from the `server/` directory with `pipenv run python seed.py`.
+
 The API runs at `http://127.0.0.1:5555`. The SQLite database is stored at `server/app.db`.
 For subsequent schema changes, run `flask --app server.app db migrate -m "Describe the change"` and `flask --app server.app db upgrade` through Pipenv.
 
