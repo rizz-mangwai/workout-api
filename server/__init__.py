@@ -1,0 +1,1 @@
+"""Workout API application package."""
