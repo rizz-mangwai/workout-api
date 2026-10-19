@@ -1,7 +1,10 @@
 from marshmallow import Schema, ValidationError, fields, post_load, validates_schema
 from marshmallow.validate import Length, Range
 
-from .models import Exercise, Workout, WorkoutExercise
+if __package__:
+    from .models import Exercise, Workout, WorkoutExercise
+else:
+    from models import Exercise, Workout, WorkoutExercise
 
 
 class WorkoutSchema(Schema):

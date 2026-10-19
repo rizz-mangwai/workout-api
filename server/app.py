@@ -6,16 +6,28 @@ from marshmallow import ValidationError
 from sqlalchemy import event
 from sqlalchemy.exc import IntegrityError
 
-from .models import Exercise, Workout, db
-from .schemas import (
-    ExerciseDetailSchema,
-    WorkoutDetailSchema,
-    exercise_schema,
-    exercises_schema,
-    workout_exercise_schema,
-    workout_schema,
-    workouts_schema,
-)
+if __package__:
+    from .models import Exercise, Workout, db
+    from .schemas import (
+        ExerciseDetailSchema,
+        WorkoutDetailSchema,
+        exercise_schema,
+        exercises_schema,
+        workout_exercise_schema,
+        workout_schema,
+        workouts_schema,
+    )
+else:
+    from models import Exercise, Workout, db
+    from schemas import (
+        ExerciseDetailSchema,
+        WorkoutDetailSchema,
+        exercise_schema,
+        exercises_schema,
+        workout_exercise_schema,
+        workout_schema,
+        workouts_schema,
+    )
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = (
